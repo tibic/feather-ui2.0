@@ -20,7 +20,7 @@ return Class.$factory('tabs', {
         this.options = $.extend({
             dom: null,
             selecter: '> *',
-            attr: 'href',
+            targetAttr: 'data-target',
             currentClass: '',
             currentIndex: 0,
             event: 'click'
@@ -50,7 +50,7 @@ return Class.$factory('tabs', {
     },
 
     initTargets: function(){
-        var self = this, attr = self.options.attr;
+        var self = this, attr = self.options.targetAttr;
 
         self.targets = [];
 
