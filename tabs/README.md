@@ -16,7 +16,7 @@ Tabs
 
 ##Api
 
-* tabTo(index)：切换至某一项
+* to(index)：切换至某一项
 * refresh(): 当tabs结构有改动时，可执行refresh方法，进行刷新，重新初始化
 
 
