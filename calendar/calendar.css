@@ -1,0 +1,120 @@
+.ui-calendar{
+	border: 1px solid #ff6900;
+	padding: 2px;
+	width: 191px;
+	display: inline-block;
+	background: white;
+	font-family: Verdana;
+}
+
+.ui-calendar-container{
+	border-collapse: separate;
+	border-spacing: 2px;
+	font-weight: bold;
+}
+
+.ui-calendar-container a{
+	text-decoration: none;
+}
+
+.ui-calendar-container th, .ui-calendar-container td{
+	padding: 0px;
+	margin: 0px;
+	font-family: 微软雅黑, Verdana;
+	font-size: 12px;
+	height: 25px;
+	width: 25px;
+	white-space:nowrap;
+	text-align: center;
+}
+
+.ui-calendar-title{
+	height: 28px;
+	background: #ff6900;
+	border: 1px solid #f05922;
+	zoom: 1;
+}
+
+.ui-calendar-title th{
+	position: relative;
+}
+
+.ui-calendar-date{
+	width: 110px;
+	text-align: center;
+	margin: 4px auto;
+	height: 20px;
+	color: white;
+	display: block;
+}
+
+.ui-calendar-year-range, .ui-calendar-month-range{
+	display: inline-block;
+	float: left;
+}
+
+.ui-calendar-year-range{
+	margin-right: 6px;
+}
+
+.ui-calendar-year-range .ui-droplist, .ui-calendar-year-range .ui-droplist-list{
+	min-width: 58px;
+}
+
+.ui-calendar-month-range .ui-droplist, .ui-calendar-month-range .ui-droplist-list{
+	min-width: 42px;
+}
+
+.ui-calendar-next, .ui-calendar-prev{
+	height: 28px;
+	top: 0px;
+	position: absolute;
+	width: 15px;
+	background-image: url(./images/arrow.png);
+	background-repeat: no-repeat;
+}
+
+.ui-calendar-prev{
+	left: 0px;
+	background-position: 10px center;
+}
+
+.ui-calendar-next{
+	right: 0px;
+	background-position: -5px center;
+}
+
+/*.ui-calendar-title select{
+	margin: 0px 5px;
+}*/
+
+.ui-calendar-item{
+	height: 23px;
+	width: 23px;
+	line-height: 23px;
+	background: white;
+	border: 1px solid #e1e1e1;
+	font-family: Verdana;
+	color: #666;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.ui-calendar-item-disable{
+	width: 25px;
+	height: 25px;
+	background: #e1e1e1 !important;
+	border: 0px !important;	
+	cursor: default;
+	color: #999 !important;
+}
+
+.ui-calendar-item-today{
+	border: 1px solid #fce4dd;
+	color: #ff6900 !important;
+}
+
+.ui-calendar-item:hover{
+	border: 1px solid #fce4dd;
+	color: #ff6900;
+}
