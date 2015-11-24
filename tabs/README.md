@@ -14,7 +14,36 @@ Tabs
 
 * switch(index)：切换时触发
 
-###API
+##Api
 
 * tabTo(index)：切换至某一项
 * refresh(): 当tabs结构有改动时，可执行refresh方法，进行刷新，重新初始化
+
+
+##Example
+
+```html
+<div id="tab-btns">
+	<a href="#tab1">tab1</a>
+	<a href="#tab2">tab2</a>
+	<a href="#tab3">tab3</a>
+</div>
+
+<div id="tab1"></div>
+<div id="tab1"></div>
+<div id="tab1"></div>
+```
+
+```js
+$('#tab-btns').tabs({
+	selecter: '> a',
+	event: 'mouseover'
+});
+
+$('#tab-btns').tabs().on('switch', function(index){
+	console.log(index);
+});
+
+$('#tabs-btns').tabs('to', 2);
+```js
+

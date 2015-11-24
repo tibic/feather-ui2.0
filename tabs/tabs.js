@@ -82,7 +82,7 @@ return Class.$factory('tabs', {
         });
     },
     
-    tabTo: function(index){
+    to: function(index){
         var self = this, index = index || 0;
 
         if(index > self.doms.length - 1) return false;
