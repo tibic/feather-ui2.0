@@ -1,4 +1,4 @@
-.ui-suggestion{
+.ui2-suggestion{
 	position: absolute;
 	border: 1px solid #ccc;
 	background: white;
@@ -9,7 +9,7 @@
 	z-index: 10000;
 }
 
-.ui-suggestion-item, .ui-suggestion-header, .ui-suggestion-footer{
+.ui2-suggestion-item, .ui2-suggestion-header, .ui2-suggestion-footer{
 	display: block;
 	text-indent: 5px;
 	width: 100%;
@@ -19,12 +19,12 @@
 	color: #333;
 }
 
-.ui-suggestion-item:hover, .ui-suggestion-active{
+.ui2-suggestion-item:hover, .ui2-suggestion-active{
 	background: #eee;
 	cursor: pointer;
 }
 
-.ui-suggestion-header, .ui-suggestion-footer{
+.ui2-suggestion-header, .ui2-suggestion-footer{
 	color: #0090e0;
 	display: none;
 }

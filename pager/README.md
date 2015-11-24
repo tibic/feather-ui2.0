@@ -15,7 +15,7 @@ var page = new Page({
     first: true,  //显示首页
     last: true,   //显示最后一页
     currentPage: 1, //当前页码
-    currentPageClassName: 'ui-pager-current',  //当前页class
+    currentPageClassName: 'ui2-pager-current',  //当前页class
     pageClassName: '',  //页码class
     callback: function(page){}  //url不为空时 每次点击页码回调， 当前页不可重复点击，如需重新加载当前页，可直接调用pageto方法
 });

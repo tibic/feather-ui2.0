@@ -72,7 +72,7 @@ var Calendar = Class.$factory('calendar', {
 		var self = this, opt = self.options;
 
 		self.target = opt.dom ? $(opt.dom) : $(opt.target);
-		self.wraper = $('<div class="ui-calendar"></div>');
+		self.wraper = $('<div class="ui2-calendar"></div>');
 		self.container = $(opt.container).append(self.wraper);
 
 		self.initCalendar();
@@ -97,7 +97,7 @@ var Calendar = Class.$factory('calendar', {
 	initCalendar: function(){
 		var self = this;
 
-		self.calendar = $('<table class="ui-calendar-container" />').appendTo(self.wraper);
+		self.calendar = $('<table class="ui2-calendar-container" />').appendTo(self.wraper);
 
 		var yearRange = self.options.yearRange, weekTpl = [];
 
@@ -107,11 +107,11 @@ var Calendar = Class.$factory('calendar', {
 
 		var $header = $([
 			'<thead>', 
-				'<tr class="ui-calendar-title">',
+				'<tr class="ui2-calendar-title">',
 					'<th colspan="7">',
-						yearRange ? '' : '<a href="javascript:" class="ui-calendar-next"></a>',
-						yearRange ? '' : '<a href="javascript:" class="ui-calendar-prev"></a>',
-						'<div class="ui-calendar-date"></div>',
+						yearRange ? '' : '<a href="javascript:" class="ui2-calendar-next"></a>',
+						yearRange ? '' : '<a href="javascript:" class="ui2-calendar-prev"></a>',
+						'<div class="ui2-calendar-date"></div>',
 					'</th>',
 				'</tr>',
 				'<tr>' + weekTpl.join('') + '</tr>',
@@ -131,8 +131,8 @@ var Calendar = Class.$factory('calendar', {
 				months[' ' + toPad(i, 0, 2, true)] = i;
 			}
 
-			var $year = $('<div class="ui-calendar-year-range"></div>'), $month = $('<div class="ui-calendar-month-range"></div>');
-			$header.find('.ui-calendar-date').append($year, $month);
+			var $year = $('<div class="ui2-calendar-year-range"></div>'), $month = $('<div class="ui2-calendar-month-range"></div>');
+			$header.find('.ui2-calendar-date').append($year, $month);
 
 			self.yearSelecter = new DropList({
 				container: $year,
@@ -173,7 +173,7 @@ var Calendar = Class.$factory('calendar', {
 		self.wraper.click(function(e){
 			var $item = $(e.target);
 
-			if($item.hasClass('ui-calendar-item') && !$item.hasClass('ui-calendar-item-disable')){
+			if($item.hasClass('ui2-calendar-item') && !$item.hasClass('ui2-calendar-item-disable')){
 				var date = $item.attr('data-calendar-date');
 
 				self.trigger('select', date);
@@ -199,12 +199,12 @@ var Calendar = Class.$factory('calendar', {
 				self.toMonth(self.year, v);
 			});
 		}else{
-			self.wraper.delegate('.ui-calendar-prev', 'click', function(e){
+			self.wraper.delegate('.ui2-calendar-prev', 'click', function(e){
 				self.prevMonth();
 				e.stopPropagation();
 			});
 
-			self.wraper.delegate('.ui-calendar-next', 'click', function(e){
+			self.wraper.delegate('.ui2-calendar-next', 'click', function(e){
 				self.nextMonth();
 				e.stopPropagation();
 			});
@@ -229,7 +229,7 @@ var Calendar = Class.$factory('calendar', {
 			self.yearSelecter.setValue(year);
 			self.monthSelecter.setValue(month);
 		}else{
-			self.calendar.find('.ui-calendar-date').text(self.year + '.' + toPad(self.month, 0, 2, true));
+			self.calendar.find('.ui2-calendar-date').text(self.year + '.' + toPad(self.month, 0, 2, true));
 		}
 
 		self.renderItems();
@@ -253,14 +253,14 @@ var Calendar = Class.$factory('calendar', {
 				if(j < start && i == 0 || index > max){
 					x.push('<td>&nbsp;</td>');
 				}else if(index <= max){
-					var d = self.getDate(new Date(year, month, index)), cn = 'ui-calendar-item';
+					var d = self.getDate(new Date(year, month, index)), cn = 'ui2-calendar-item';
 
 					if(today == d){
-						cn += ' ui-calendar-item-today';
+						cn += ' ui2-calendar-item-today';
 					}
 
 					if(self.minDate && d < self.minDate || self.maxDate && d > self.maxDate){
-						cn += ' ui-calendar-item-disable';
+						cn += ' ui2-calendar-item-disable';
 					}
 
 					x.push('<td><a href="javascript:" data-calendar-date="' + d + '" class="' + cn + '" title="' + d + '">' + index++ + '</a></td>');

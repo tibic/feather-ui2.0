@@ -1,4 +1,4 @@
-.ui-tips-success, .ui-tips-error, .ui-tips-loading, .ui-tips-warn{
+.ui2-tips-success, .ui2-tips-error, .ui2-tips-loading, .ui2-tips-warn{
 	height: 70px;
     line-height: 70px;
     padding: 0px 20px 0px 60px;
@@ -9,22 +9,22 @@
     text-align: center;
 }
 
-.ui-tips-loading{
+.ui2-tips-loading{
     background-image: url('./images/loading.gif');
 }
 
-.ui-tips-error{
+.ui2-tips-error{
     background-image: url('./images/error.png');
 }
 
-.ui-tips-warn{
+.ui2-tips-warn{
 	background-image: url('./images/warn.png');
 }
 
-.ui-tips .ui-dialog-content{
+.ui2-tips .ui2-dialog-content{
 	display: inline-block;
 }
 
-.ui-tips .ui-dialog-content{
+.ui2-tips .ui2-dialog-content{
 	font-size: 16px;
 }

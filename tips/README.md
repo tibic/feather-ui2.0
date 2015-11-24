@@ -26,7 +26,7 @@ setTimeout(function(){
 
 * Tips.show(content[, mask, timeout, classname]);
 ```js
-Tips.show('123', true, 3000, 'ui-tips-error');
+Tips.show('123', true, 3000, 'ui2-tips-error');
 ```
 
 

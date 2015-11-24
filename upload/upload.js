@@ -80,7 +80,7 @@ var prototype = {
 		});
 
 		if(!self.dom.attr('id')){
-			self.dom.attr('id', 'ui-upload-' + $.now);
+			self.dom.attr('id', 'ui2-upload-' + $.now);
 		}
 
 		self.dom.uploadify(options);

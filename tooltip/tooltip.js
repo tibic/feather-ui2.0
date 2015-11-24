@@ -58,7 +58,7 @@ var Tooltip = Class.$factory('tooltip', {
 	createTip: function(){
 		var self = this, opts = self.options, $dom = self.dom, content = opts.content;
 
-		self.tip = $('<div class="ui-tooltip-wrap"><div class="ui-tooltip-content"></div><i class="ui-tooltip-arrow"></i></div>').addClass('ui-tooltip-theme-' + opts.theme);
+		self.tip = $('<div class="ui2-tooltip-wrap"><div class="ui2-tooltip-content"></div><i class="ui2-tooltip-arrow"></i></div>').addClass('ui2-tooltip-theme-' + opts.theme);
 		
 		opts.className && self.tip.addClass(opts.className);
 
@@ -75,7 +75,7 @@ var Tooltip = Class.$factory('tooltip', {
 	setContent: function(content){
 		var self = this;
 
-		self.tip.find('.ui-tooltip-content').html(content);
+		self.tip.find('.ui2-tooltip-content').html(content);
 		self.setPos();
 	},
 
@@ -127,7 +127,7 @@ var Tooltip = Class.$factory('tooltip', {
 			result = $.extend(self.getPos(pos1), self.getPos(pos2));
 		}
 
-		self.tip.css(result).addClass('ui-tooltip-' + className);
+		self.tip.css(result).addClass('ui2-tooltip-' + className);
 	},
 
 	getPos: function(pos, center){

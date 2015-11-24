@@ -48,7 +48,7 @@ var Suggestion = Class.$factory('suggestion', {
 
 		!/fixed|absolute/.test(self.parent.css('position')) && self.parent.css('position', 'relative');
 
-		self.suggest = $('<ul class="ui-suggestion"><li class="ui-suggestion-header"></li><li class="ui-suggestion-footer"></li></ul>').appendTo(self.parent);
+		self.suggest = $('<ul class="ui2-suggestion"><li class="ui2-suggestion-header"></li><li class="ui2-suggestion-footer"></li></ul>').appendTo(self.parent);
 		self.xhr = null;
 		self.tid = null;
 		self.index = null;
@@ -62,7 +62,7 @@ var Suggestion = Class.$factory('suggestion', {
 
 		self.dom.on('keyup paste cut', function(e){
 			if(e.keyCode == 13){
-				var $current = self.suggest.find('.ui-suggestion-active');
+				var $current = self.suggest.find('.ui2-suggestion-active');
 
 				if($current.length){
 					self.setKw($current.attr('data-suggestion-kw'), $current, true);
@@ -83,7 +83,7 @@ var Suggestion = Class.$factory('suggestion', {
 			}
 		});
 
-		self.suggest.delegate('.ui-suggestion-item', 'click', function(){
+		self.suggest.delegate('.ui2-suggestion-item', 'click', function(){
 			self.setKw($(this).attr('data-suggestion-kw'), $(this).attr('data-suggestion-index'), true);
 			self.close();
 		}).hover(function(){
@@ -92,7 +92,7 @@ var Suggestion = Class.$factory('suggestion', {
 			over = false;
 		});
 
-		self.suggest.find('.ui-suggestion-header, .ui-suggestion-footer').click(function(){
+		self.suggest.find('.ui2-suggestion-header, .ui2-suggestion-footer').click(function(){
 			self.dom.focus();
 		});
 	},
@@ -125,9 +125,9 @@ var Suggestion = Class.$factory('suggestion', {
 
 		self.index = index;
 		
-		self.items.removeClass('ui-suggestion-active');
+		self.items.removeClass('ui2-suggestion-active');
 
-		var $item = self.items.eq(index).addClass('ui-suggestion-active');
+		var $item = self.items.eq(index).addClass('ui2-suggestion-active');
 		var kw = $item.attr('data-suggestion-kw');
 
 		self.setKw(kw);
@@ -140,12 +140,8 @@ var Suggestion = Class.$factory('suggestion', {
 		this.data = data;
 	},
 
-	setTitle: function(title){
-		this.setHeader(title);
-	},
-
 	setHeader: function(header){
-		var $header = this.suggest.find('.ui-suggestion-header');
+		var $header = this.suggest.find('.ui2-suggestion-header');
 
 		if(!header){
 			$header.hide();
@@ -155,7 +151,7 @@ var Suggestion = Class.$factory('suggestion', {
 	},
 
 	setFooter: function(footer){
-		var $footer = this.suggest.find('.ui-suggestion-footer');
+		var $footer = this.suggest.find('.ui2-suggestion-footer');
 
 		if(!footer){
 			$footer.hide();
@@ -227,7 +223,7 @@ var Suggestion = Class.$factory('suggestion', {
 		var self = this, opts = self.options;
 
 		self.index = null;
-		self.suggest.find('.ui-suggestion-item').remove();
+		self.suggest.find('.ui2-suggestion-item').remove();
 		self.finalData = data;
 		
 		if(!data.length){
@@ -238,11 +234,11 @@ var Suggestion = Class.$factory('suggestion', {
 
 			$.each(data, function(key, item){
 				var txt = typeof item == 'string' ? item : item[opts.matchKwField];
-				html += '<li class="ui-suggestion-item" data-suggestion-index="' + key + '" data-suggestion-kw="' + txt + '">' + String(self.format(item, kw)) + '</li>';
+				html += '<li class="ui2-suggestion-item" data-suggestion-index="' + key + '" data-suggestion-kw="' + txt + '">' + String(self.format(item, kw)) + '</li>';
 			});
 
 			self.items = $(html);
-			self.suggest.find('.ui-suggestion-header').after(self.items);
+			self.suggest.find('.ui2-suggestion-header').after(self.items);
 			self.open();
 			self.trigger('build');
 		}

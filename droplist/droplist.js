@@ -65,9 +65,9 @@ var DropList = Class.$factory('droplist', {
 
 		self.value = '';
 
-		self.wraper = $('<div class="ui-droplist"><i class="ui-droplist-arrow"></i></div>').appendTo(opts.container);
-		self.select = $('<span class="ui-droplist-select"></span>').appendTo(self.wraper);
-		self.list = $('<ul class="ui-droplist-list"></ul>').appendTo(self.wraper);
+		self.wraper = $('<div class="ui2-droplist"><i class="ui2-droplist-arrow"></i></div>').appendTo(opts.container);
+		self.select = $('<span class="ui2-droplist-select"></span>').appendTo(self.wraper);
+		self.list = $('<ul class="ui2-droplist-list"></ul>').appendTo(self.wraper);
 
 		self.dom = opts.dom ? $(opts.dom) : null;
 		self.setList(opts.dom || opts.list || opts.items, opts.defaultValue);
@@ -96,7 +96,7 @@ var DropList = Class.$factory('droplist', {
 			});
 		}
 
-		self.list.delegate('.ui-droplist-item', 'click', function(){
+		self.list.delegate('.ui2-droplist-item', 'click', function(){
 			var $this = $(this);
 			var key = $this.attr('data-droplist-key'), value = $this.attr('data-droplist-value');
 
@@ -109,8 +109,8 @@ var DropList = Class.$factory('droplist', {
 	open: function(){
 		var self = this;
 
-		if(!self.wraper.hasClass('ui-droplist-disabled')){
-			self.wraper.addClass('ui-droplist-open');
+		if(!self.wraper.hasClass('ui2-droplist-disabled')){
+			self.wraper.addClass('ui2-droplist-open');
 			self.resetWidth();
 			self.isHide = false;
 			self.trigger('open');
@@ -120,8 +120,8 @@ var DropList = Class.$factory('droplist', {
 	close: function(){
 		var self = this;
 
-		if(!self.wraper.hasClass('ui-droplist-disabled')){
-			self.wraper.removeClass('ui-droplist-open');
+		if(!self.wraper.hasClass('ui2-droplist-disabled')){
+			self.wraper.removeClass('ui2-droplist-open');
 			self.isHide = true;
 			self.trigger('close');
 		}
@@ -143,7 +143,7 @@ var DropList = Class.$factory('droplist', {
 		if(defaultValue){
 			self.setValue(defaultValue, defaultKey);
 		}else{
-			var $first = $('.ui-droplist-item:first', self.list);
+			var $first = $('.ui2-droplist-item:first', self.list);
 			self.setValue($first.attr('data-droplist-value'), $first.attr('data-droplist-key'));
 		}
 	},
@@ -167,9 +167,9 @@ var DropList = Class.$factory('droplist', {
 		if(!height) return;
 
 		height = parseInt(height);
-		self.wraper.find('.ui-droplist-arrow').css('top', parseInt((height - DropList.ARROW_WIDTH)/2));
+		self.wraper.find('.ui2-droplist-arrow').css('top', parseInt((height - DropList.ARROW_WIDTH)/2));
 		self.wraper.css('height', height);
-		self.wraper.find('.ui-droplist-select, .ui-droplist-group-label, .ui-droplist-item-txt').css('line-height', height + 'px');
+		self.wraper.find('.ui2-droplist-select, .ui2-droplist-group-label, .ui2-droplist-item-txt').css('line-height', height + 'px');
 		self.list.css('top', height);
 	},
 
@@ -182,8 +182,8 @@ var DropList = Class.$factory('droplist', {
 			var cn = self.options.selectedClassName;
 
 			if(cn){
-				self.list.find('.ui-droplist-item-txt').removeClass(cn);
-				$dom.find('.ui-droplist-item-txt').addClass(cn);
+				self.list.find('.ui2-droplist-item-txt').removeClass(cn);
+				$dom.find('.ui2-droplist-item-txt').addClass(cn);
 			}
 			
 			if(!key){
@@ -219,14 +219,14 @@ var DropList = Class.$factory('droplist', {
 	disable: function(){
 		var self = this;
 
-		self.wraper.addClass('ui-droplist-disabled');
+		self.wraper.addClass('ui2-droplist-disabled');
 		self.dom && self.dom.attr('disabled', true);
 	},
 
 	enable: function(){
 		var self = this;
 
-		self.wraper.addClass('ui-droplist-disabled');
+		self.wraper.addClass('ui2-droplist-disabled');
 		self.dom && self.dom.removeAttr('disabled');
 	},
 
@@ -245,13 +245,13 @@ DropList.createListHtml = function(list){
 	$.each(list, function(key, item){
 		if(typeof item == 'object' && item){
 			html.push('\
-				<li class="ui-droplist-group">\
-					<span href="javascript:;" class="ui-droplist-group-label">' + key + '</span>\
+				<li class="ui2-droplist-group">\
+					<span href="javascript:;" class="ui2-droplist-group-label">' + key + '</span>\
 					<ul>' + DropList.createListHtml(item) + '</ul>\
 				</li>'
 			);
 		}else{
-			html.push('<li class="ui-droplist-item" data-droplist-key="' + key + '" data-droplist-value="' + item + '"><a href="javascript:;" class="ui-droplist-item-txt">' + key + '</a></li>');
+			html.push('<li class="ui2-droplist-item" data-droplist-key="' + key + '" data-droplist-value="' + item + '"><a href="javascript:;" class="ui2-droplist-item-txt">' + key + '</a></li>');
 		}
 	});
 

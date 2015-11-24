@@ -46,7 +46,7 @@ return Class.$factory('pager', {
 			first: true,	//显示首页
 			last: true,		//显示最后一页
 			currentPage: 1,	//当前页码
-			currentPageClassName: 'ui-pager-current',	//当前页class
+			currentPageClassName: 'ui2-pager-current',	//当前页class
 			className: '',
 			pageClassName: ''	//页码class
 		}, opt || {});
@@ -59,7 +59,7 @@ return Class.$factory('pager', {
 
 		if(opt.pageTotal == 0) return; 
 		
-		self.container = $('<ul class="ui-pager">').addClass(opt.className);
+		self.container = $('<ul class="ui2-pager">').addClass(opt.className);
 		self.dom = $(opt.dom).empty().append(self.container);
 		
 		self.index = parseInt(opt.currentPage);
@@ -92,7 +92,7 @@ return Class.$factory('pager', {
 			var _0 = value[0], _1 = value[1], $html;
 
 			if(!_1){
-				$html = $('<li>' + _0 + '</li>').addClass('ui-pager-point');
+				$html = $('<li>' + _0 + '</li>').addClass('ui2-pager-point');
 			}else if(_1 != self.index){
 				$html = $('<li><a href="' + (opt.url ? opt.url + _1 : 'javascript:void(0);') + '" data-page="' + _1 + '">' + _0 + '</a></li>').addClass(value[2]);
 			}else{  
@@ -128,7 +128,7 @@ return Class.$factory('pager', {
 		var arr = [];
 
 		if(index > 1){
-			arr.push([opt.previous || '&lt;', index - 1, 'ui-pager-previous']);
+			arr.push([opt.previous || '&lt;', index - 1, 'ui2-pager-previous']);
 		}
 
 		if(opt.first){
@@ -154,7 +154,7 @@ return Class.$factory('pager', {
 		}
 
 		if(index < total){
-			arr.push([opt.next || '&gt;', index + 1, 'ui-pager-next']);
+			arr.push([opt.next || '&gt;', index + 1, 'ui2-pager-next']);
 		}
 
 		return arr;

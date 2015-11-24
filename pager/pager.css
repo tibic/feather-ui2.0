@@ -1,9 +1,9 @@
-.ui-pager{
+.ui2-pager{
 	margin:5px auto;
 	float: right;
 }
 
-.ui-pager li{
+.ui2-pager li{
 	list-style: none;
 	float: left;
 	border: 1px solid #E6E6E6;
@@ -15,15 +15,15 @@
 	font-size: 12px;
 }
 
-.ui-pager li:hover{
+.ui2-pager li:hover{
 	border-color: #ff5f08;
 }
 
-.ui-pager li.ui-pager-point{
+.ui2-pager li.ui2-pager-point{
 	border-color: #fff !important;
 }
 
-.ui-pager li a{
+.ui2-pager li a{
 	font-family: verdana, "微软雅黑";
 	font-size: 12px;
 	display: block;
@@ -35,7 +35,7 @@
 	text-decoration: none;
 }
 
-.ui-pager .ui-pager-current{
+.ui2-pager .ui2-pager-current{
 	padding: 0px 12px;
 	text-align: center;
 	background: #F5692F;
@@ -43,6 +43,6 @@
 	border-color: #ff5f08;
 }
 
-.ui-pager .ui-pager-previous, .ui-pager .ui-pager-next{
+.ui2-pager .ui2-pager-previous, .ui2-pager .ui2-pager-next{
 	background: #fff;
 }

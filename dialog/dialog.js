@@ -142,7 +142,7 @@ return Class.$factory('dialog', {
 			});
 		}
 
-		self.container.find('.ui-dialog-close').click(function(){
+		self.container.find('.ui2-dialog-close').click(function(){
 			self.close();
 		});
 
@@ -167,14 +167,14 @@ return Class.$factory('dialog', {
 	//包括创建内容　按钮
 	createContainer: function(){
 		var self = this, options = self.options;
-		var $container = self.container = $('<div class="ui-dialog-container">').html([
-			'<div class="ui-dialog-content"></div>'
+		var $container = self.container = $('<div class="ui2-dialog-container">').html([
+			'<div class="ui2-dialog-content"></div>'
 		].join('')).appendTo(self.wraper).addClass(options.className);
 
 		$container.prepend([
-			'<strong class="ui-dialog-header">',
-	    		'<a href="javascript:void(0);" class="ui-dialog-close">&times;</a>',
-	    		'<span class="ui-dialog-title"></span>',
+			'<strong class="ui2-dialog-header">',
+	    		'<a href="javascript:void(0);" class="ui2-dialog-close">&times;</a>',
+	    		'<span class="ui2-dialog-title"></span>',
 	    	'</strong>'
 	    ].join(''));
 
@@ -183,7 +183,7 @@ return Class.$factory('dialog', {
 		self.initContent();
 
 		$container.css('width', options.width);
-		$container.find('.ui-dialog-content').css({
+		$container.find('.ui2-dialog-content').css({
 			height: options.height
 		});
 	},
@@ -204,7 +204,7 @@ return Class.$factory('dialog', {
 		var self = this;
 
 		self.releaseDom();
-		self.container.find('.ui-dialog-content').html(content);
+		self.container.find('.ui2-dialog-content').html(content);
 		self.resetPosition();
 	},
 
@@ -214,14 +214,14 @@ return Class.$factory('dialog', {
 		self.releaseDom();
 		self.dom = $(dom).show();
 		self.domParent = self.dom.parent();
-		self.container.find('.ui-dialog-content').empty().append(self.dom);
+		self.container.find('.ui2-dialog-content').empty().append(self.dom);
 		self.resetPosition();
 	},
 
 	load: function(url){
 		var self = this;
 
-		self.container.find('.ui-dialog-content').load(url, function(){
+		self.container.find('.ui2-dialog-content').load(url, function(){
 			self.trigger('contentLoaded');
 			self.resetPosition();
 		});
@@ -243,7 +243,7 @@ return Class.$factory('dialog', {
 
 		if($.isEmptyObject(self.options.buttons)) return;
 
-		self.buttons = $('<div class="ui-dialog-buttons">').appendTo(self.container);
+		self.buttons = $('<div class="ui2-dialog-buttons">').appendTo(self.container);
 		self.setButtons(self.options.buttons);
 	},
 
@@ -286,7 +286,7 @@ return Class.$factory('dialog', {
 				};	
 			}
 
-			var $button = $('<a href="javascript:void(0);" class="ui-dialog-button" data-dialog-button-name="' + index + '" />').text(index).addClass(item.className).appendTo(self.buttons);
+			var $button = $('<a href="javascript:void(0);" class="ui2-dialog-button" data-dialog-button-name="' + index + '" />').text(index).addClass(item.className).appendTo(self.buttons);
 
 			$.each(item.events, function(event, callback){
 				$button.on(event, function(){
@@ -297,23 +297,23 @@ return Class.$factory('dialog', {
 	},
 
 	getButton: function(name){
-		var $buttons = this.buttons.find('.ui-dialog-button');
+		var $buttons = this.buttons.find('.ui2-dialog-button');
 
 		return typeof name == 'number' ? $buttons.eq(name) : $buttons.filter('[data-dialog-button-name="' + name + '"]');
 	},
 
 	//设置title，为false时，则头部会被隐藏掉
 	setTitle: function(title){
-		var $header = this.container.find('.ui-dialog-header');
-		$header.removeClass('ui-dialog-header-nob').show();
+		var $header = this.container.find('.ui2-dialog-header');
+		$header.removeClass('ui2-dialog-header-nob').show();
 
 		if(title === false){
 			$header.hide();
 		}else if(title == ''){
-			$header.addClass('ui-dialog-header-nob');
+			$header.addClass('ui2-dialog-header-nob');
 		}
 
-		$header.find('.ui-dialog-title').html(title);
+		$header.find('.ui2-dialog-title').html(title);
 	},
 
 	resetPosition: function(){

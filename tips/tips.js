@@ -37,7 +37,7 @@ var Tips = Class.extend('Event', {
 			content: opt.content
 		});
 
-		self.$.container.addClass('ui-tips');
+		self.$.container.addClass('ui2-tips');
 
 		if(typeof opt.timeout == 'number'){
 			self.id = setTimeout(function(){
@@ -67,14 +67,14 @@ Tips.show = function(content, timeout, mask, classname){
 		mask: mask
 	});
 
-	if(classname) tips.$.container.find('.ui-dialog-content').addClass(classname);
+	if(classname) tips.$.container.find('.ui2-dialog-content').addClass(classname);
 
 	return tips;
 };
 
 $.each(['success', 'error', 'warn', 'loading'], function(index, item){
 	Tips[item] = function(content, timeout, mask){
-		return Tips.show(content, timeout, mask, 'ui-tips-' + item);
+		return Tips.show(content, timeout, mask, 'ui2-tips-' + item);
 	};
 });
 

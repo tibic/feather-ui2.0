@@ -48,21 +48,21 @@ var Lightbox = Class.$factory('lightbox', {
 		self.mask = new Mask({autoOpen: false});
 		self.index = 0;
 		self.container = $([
-			'<div class="ui-lightbox-container">',
-				'<div class="ui-lightbox-content">',
-					'<a href="javascript:void(0);" class="ui-lightbox-prev"></a>',
-					'<a href="javascript:void(0);" class="ui-lightbox-next"></a>',
+			'<div class="ui2-lightbox-container">',
+				'<div class="ui2-lightbox-content">',
+					'<a href="javascript:void(0);" class="ui2-lightbox-prev"></a>',
+					'<a href="javascript:void(0);" class="ui2-lightbox-next"></a>',
 				'</div>',
-				'<div class="ui-lightbox-bottom">',
-					'<a href="javascript:void(0);" class="ui-lightbox-close">&times;</a>',
-					'<span class="ui-lightbox-alt"></span>',
+				'<div class="ui2-lightbox-bottom">',
+					'<a href="javascript:void(0);" class="ui2-lightbox-close">&times;</a>',
+					'<span class="ui2-lightbox-alt"></span>',
 				'</div>',
 			'</div>'
 		].join('')).appendTo(doc.body);
-		self.content = self.container.find('.ui-lightbox-content');
-		self.bottom = self.container.find('.ui-lightbox-bottom');
-		self.prev = self.container.find('.ui-lightbox-prev');
-		self.next = self.container.find('.ui-lightbox-next');
+		self.content = self.container.find('.ui2-lightbox-content');
+		self.bottom = self.container.find('.ui2-lightbox-bottom');
+		self.prev = self.container.find('.ui2-lightbox-prev');
+		self.next = self.container.find('.ui2-lightbox-next');
 
 		self.items = $.map(self.doms, function(item, k){
 			return {
@@ -88,7 +88,7 @@ var Lightbox = Class.$factory('lightbox', {
 			self.resetPosition();
 		});
 
-		self.bottom.find('.ui-lightbox-close').click(function(){
+		self.bottom.find('.ui2-lightbox-close').click(function(){
 			self.close();
 		});
 
@@ -114,7 +114,7 @@ var Lightbox = Class.$factory('lightbox', {
 		var self = this, $item = self.getItem(index), item = self.items[index];
 
 		self.content.find('img').hide();
-		self.bottom.hide().find('.ui-lightbox-alt').html(item.alt);
+		self.bottom.hide().find('.ui2-lightbox-alt').html(item.alt);
 		self.prev.hide();
 		self.next.hide();
 

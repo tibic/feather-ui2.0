@@ -1,4 +1,4 @@
-.ui-lightbox-container{
+.ui2-lightbox-container{
 	background: white;
 	z-index: 10000;
 	position: fixed;
@@ -9,7 +9,7 @@
 	padding: 10px 10px 0px 10px;
 }
 
-.ui-lightbox-content{
+.ui2-lightbox-content{
 	margin-bottom: 10px;
 	height: 200px;
 	overflow: hidden;
@@ -17,7 +17,7 @@
 	position: relative;
 }
 
-.ui-lightbox-content img{
+.ui2-lightbox-content img{
 	background: white;
 	border: 0px;
 	max-width: 1000px;
@@ -28,7 +28,7 @@
 	width: auto;
 }
 
-.ui-lightbox-prev, .ui-lightbox-next{
+.ui2-lightbox-prev, .ui2-lightbox-next{
 	width: 50%;
 	height: 100%;
 	display: block;
@@ -39,34 +39,34 @@
 	text-decoration: none;
 }
 
-.ui-lightbox-prev{
+.ui2-lightbox-prev{
 	left: 0px;
 }
 
-.ui-lightbox-next{
+.ui2-lightbox-next{
 	right: 0px;
 }
 
-.ui-lightbox-prev:hover{
+.ui2-lightbox-prev:hover{
 	background: url(./images/prev.png) no-repeat left center;
 }
 
-.ui-lightbox-next:hover{
+.ui2-lightbox-next:hover{
 	background: url(./images/next.png) no-repeat right center;
 }
 
-.ui-lightbox-bottom{
+.ui2-lightbox-bottom{
 	height: 40px;
 	line-height: 20px;
 	display: none;
 }
 
-.ui-lightbox-alt{
+.ui2-lightbox-alt{
 	width: 80%;
 	display: inline-block;
 }
 
-.ui-lightbox-close{
+.ui2-lightbox-close{
 	font-family: Tahoma;
 	font-size: 20px;
 	font-weight: bold;

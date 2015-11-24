@@ -47,7 +47,7 @@ return {
 		return new Dialog($.extend({
 			title: '提示',
 			width: 400,
-			content: '<div class="ui-alert">' + content + '</div>',
+			content: '<div class="ui2-alert">' + content + '</div>',
 			autoOpen: true,
 			buttons: {
 				'确定': {
@@ -58,24 +58,24 @@ return {
 						}
 					},
 
-					className: 'ui-alert-button-confirm'
+					className: 'ui2-alert-button-confirm'
 				}
 			}
 		}, opt || {}));
 	},
 
 	warn: function(content, callback, unclose, opt){
-		return this.alert('<div class="ui-alert-warn">' + content + '</div>', callback, unclose, opt);
+		return this.alert('<div class="ui2-alert-warn">' + content + '</div>', callback, unclose, opt);
 	},
 
 	error: function(content, callback, unclose, opt){
-		return this.alert('<div class="ui-alert-error">' + content + '</div>', callback, unclose, $.extend({
+		return this.alert('<div class="ui2-alert-error">' + content + '</div>', callback, unclose, $.extend({
 			title: '错误'
 		}, opt || {}));
 	},
 
 	success: function(content, callback, unclose, opt){
-		return this.alert('<div class="ui-alert-success">' + content + '</div>', callback, unclose, $.extend({
+		return this.alert('<div class="ui2-alert-success">' + content + '</div>', callback, unclose, $.extend({
 			title: '操作成功'
 		}, opt || {}));
 	},
@@ -91,7 +91,7 @@ return {
 		return new Dialog($.extend({
 			title: '提示',
 			width: 400,
-			content: '<div class="ui-alert">' + content + '</div>',
+			content: '<div class="ui2-alert">' + content + '</div>',
 			autoOpen: true,
 			buttons: {
 				'确定': {
@@ -102,7 +102,7 @@ return {
 						}
 					},
 
-					className: 'ui-alert-button-confirm'
+					className: 'ui2-alert-button-confirm'
 				},
 
 				'取消': {
@@ -112,7 +112,7 @@ return {
 						}
 					},
 
-					className: 'ui-alert-button-cancel'
+					className: 'ui2-alert-button-cancel'
 				}
 			}
 		}, opt || {}));

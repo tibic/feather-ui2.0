@@ -56,7 +56,7 @@ return Class.$factory('mask', {
 			!/fixed|absolute/.test(container.css('position')) && container.css('position', 'relative');
 		}
 		
-		self.mask = $('<div class="ui-mask">').hide().css({
+		self.mask = $('<div class="ui2-mask">').hide().css({
 			backgroundColor: self.options.color,
 			opacity: self.options.opacity
 		}).appendTo(self.container);

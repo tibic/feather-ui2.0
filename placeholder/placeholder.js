@@ -70,7 +70,7 @@ var PlaceHolder = Class.$factory('placeholder', {
 					width: $dom.innerWidth(),
 					height: $dom.innerHeight(),
 					lineHeight: $dom.innerHeight() + 'px'
-				}).insertAfter($dom).addClass('ui-placeholder').click(function(){
+				}).insertAfter($dom).addClass('ui2-placeholder').click(function(){
 					$(this).hide();
 					$dom.focus();
 				});

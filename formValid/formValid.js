@@ -182,7 +182,7 @@ var FormValid = Class.$factory('formValid', {
 	error: function(name, text){
     	if(text != null || this.options.showErrorStatus){
     		text = text || '';
-			this.setText(name, text || '', 'ui-formvalid-field-error');   
+			this.setText(name, text || '', 'ui2-formvalid-field-error');   
     	} 
 
     	this.trigger('error', [name, text]);
@@ -191,7 +191,7 @@ var FormValid = Class.$factory('formValid', {
 	success: function(name, text, showSuccessStatus){
 		if(text != null || this.options.showSuccessStatus || showSuccessStatus){
 			text = text || '';
-			this.setText(name, text, 'ui-formvalid-field-success');	
+			this.setText(name, text, 'ui2-formvalid-field-success');	
 		}
 
 		this.trigger('success', [name, text]);
@@ -200,10 +200,10 @@ var FormValid = Class.$factory('formValid', {
 	setText: function(name, text, classname){
 		var $parent = this.getElement(name).parent();
 
-		$parent.find('.ui-formvalid-field[data-formvalid-target="' + name + '"]').remove();
+		$parent.find('.ui2-formvalid-field[data-formvalid-target="' + name + '"]').remove();
 
 		if(text != null){
-			$parent.append('<span class="ui-formvalid-field ' + classname + '" data-formvalid-target="' + name + '">' + (text || '&nbsp;') + '</span>');
+			$parent.append('<span class="ui2-formvalid-field ' + classname + '" data-formvalid-target="' + name + '">' + (text || '&nbsp;') + '</span>');
 		}
 	},
 
@@ -217,7 +217,7 @@ var FormValid = Class.$factory('formValid', {
 				text = self.getElement(name).attr(FormValid.ATTRIBUTE_DEFAULT);
 			}
             
-            self.setText(name, text, 'ui-formvalid-field-default');
+            self.setText(name, text, 'ui2-formvalid-field-default');
         }else{
             self.getElement().each(function(){
             	var name = this.name;
@@ -228,7 +228,7 @@ var FormValid = Class.$factory('formValid', {
 					text = $(this).attr(FormValid.ATTRIBUTE_DEFAULT);
 				}
 
-				self.setText(name, text, 'ui-formvalid-field-default');
+				self.setText(name, text, 'ui2-formvalid-field-default');
         	});
         }
 	},

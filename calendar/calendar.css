@@ -1,4 +1,4 @@
-.ui-calendar{
+.ui2-calendar{
 	border: 1px solid #ff6900;
 	padding: 2px;
 	width: 191px;
@@ -7,17 +7,17 @@
 	font-family: Verdana;
 }
 
-.ui-calendar-container{
+.ui2-calendar-container{
 	border-collapse: separate;
 	border-spacing: 2px;
 	font-weight: bold;
 }
 
-.ui-calendar-container a{
+.ui2-calendar-container a{
 	text-decoration: none;
 }
 
-.ui-calendar-container th, .ui-calendar-container td{
+.ui2-calendar-container th, .ui2-calendar-container td{
 	padding: 0px;
 	margin: 0px;
 	font-family: 微软雅黑, Verdana;
@@ -28,18 +28,18 @@
 	text-align: center;
 }
 
-.ui-calendar-title{
+.ui2-calendar-title{
 	height: 28px;
 	background: #ff6900;
 	border: 1px solid #f05922;
 	zoom: 1;
 }
 
-.ui-calendar-title th{
+.ui2-calendar-title th{
 	position: relative;
 }
 
-.ui-calendar-date{
+.ui2-calendar-date{
 	width: 110px;
 	text-align: center;
 	margin: 4px auto;
@@ -48,24 +48,24 @@
 	display: block;
 }
 
-.ui-calendar-year-range, .ui-calendar-month-range{
+.ui2-calendar-year-range, .ui2-calendar-month-range{
 	display: inline-block;
 	float: left;
 }
 
-.ui-calendar-year-range{
+.ui2-calendar-year-range{
 	margin-right: 6px;
 }
 
-.ui-calendar-year-range .ui-droplist, .ui-calendar-year-range .ui-droplist-list{
+.ui2-calendar-year-range .ui2-droplist, .ui2-calendar-year-range .ui2-droplist-list{
 	min-width: 58px;
 }
 
-.ui-calendar-month-range .ui-droplist, .ui-calendar-month-range .ui-droplist-list{
+.ui2-calendar-month-range .ui2-droplist, .ui2-calendar-month-range .ui2-droplist-list{
 	min-width: 42px;
 }
 
-.ui-calendar-next, .ui-calendar-prev{
+.ui2-calendar-next, .ui2-calendar-prev{
 	height: 28px;
 	top: 0px;
 	position: absolute;
@@ -74,21 +74,21 @@
 	background-repeat: no-repeat;
 }
 
-.ui-calendar-prev{
+.ui2-calendar-prev{
 	left: 0px;
 	background-position: 10px center;
 }
 
-.ui-calendar-next{
+.ui2-calendar-next{
 	right: 0px;
 	background-position: -5px center;
 }
 
-/*.ui-calendar-title select{
+/*.ui2-calendar-title select{
 	margin: 0px 5px;
 }*/
 
-.ui-calendar-item{
+.ui2-calendar-item{
 	height: 23px;
 	width: 23px;
 	line-height: 23px;
@@ -100,7 +100,7 @@
 	display: inline-block;
 }
 
-.ui-calendar-item-disable{
+.ui2-calendar-item-disable{
 	width: 25px;
 	height: 25px;
 	background: #e1e1e1 !important;
@@ -109,12 +109,12 @@
 	color: #999 !important;
 }
 
-.ui-calendar-item-today{
+.ui2-calendar-item-today{
 	border: 1px solid #fce4dd;
 	color: #ff6900 !important;
 }
 
-.ui-calendar-item:hover{
+.ui2-calendar-item:hover{
 	border: 1px solid #fce4dd;
 	color: #ff6900;
 }
