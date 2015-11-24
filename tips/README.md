@@ -1,42 +1,24 @@
 Tips
 =========
 
-###简介
-额~, 你也懂的
+###Options
 
-###API
-* destory 销毁对象
+* content: 显示内容
+* timeout：消失时间，默认为3000ms，设置为false时，则不会消失，必须手动destroy
+* mask: 是否背景遮罩，默认为false
 
+###Api
 
-###使用
-* new Tips(opt)
-```js
-var tips = new Tips({
-  content: '123',
-  mask: true,     //开启遮罩
-  timeout: false  //手动关闭
-});
+* destroy：摧毁对象
 
+###静态方法
 
-setTimeout(function(){
-  tips.destory();
-}, 3000);
-```
+* show(content[, mask, timeout, classname])：创建一个简单的tips，并显示
 
+* warn(content[, mask, timeout, classname])：创建一个Warn类型的tips，并显示
 
-* Tips.show(content[, mask, timeout, classname]);
-```js
-Tips.show('123', true, 3000, 'ui2-tips-error');
-```
+* error(content[, mask, timeout, classname])：创建一个error类型的tips，并显示
 
+* success(content[, mask, timeout, classname])：创建一个success类型的tips，并显示
 
-* Tips.error(content[, mask, timeout]);
-```js
-Tips.error('123', true, 3000);
-```
-
-* Tips.success(content[, mask, timeout]);
-
-* Tips.loading(content[, mask, timeout]);
-
-* Tips.wran(content[, mask, timeout]);
+* loading(content[, mask, timeout, classname])：创建一个loading类型的tips，并显示

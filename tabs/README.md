@@ -46,4 +46,3 @@ $('#tab-btns').tabs().on('switch', function(index){
 
 $('#tabs-btns').tabs('to', 2);
 ```js
-
