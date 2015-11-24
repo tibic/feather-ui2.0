@@ -24,9 +24,9 @@ Tabs
 
 ```html
 <div id="tab-btns">
-	<a href="#tab1">tab1</a>
-	<a href="#tab2">tab2</a>
-	<a href="#tab3">tab3</a>
+	<a href="#tab1" data-target="tab1">tab1</a>
+	<a href="#tab2" data-target="tab2">tab2</a>
+	<a href="#tab3" data-target="tab3">tab3</a>
 </div>
 
 <div id="tab1"></div>
