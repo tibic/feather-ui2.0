@@ -1,10 +1,30 @@
-Slide(滑动插件)
+Slider(滑动插件)
 =======================
 
-slide插件提供最基础的滑动API，可自行继承并定制，也可不定制，全部依赖原有api来实现各种复杂滑动功能，无强制的dom结构，只需提供一个简单的dom元素即可，滑动对该dom元素下的直接子元素生效
+slider插件提供最基础的滑动API，可自行继承并定制，也可不定制，全部依赖原有api来实现各种复杂滑动功能，无强制的dom结构，只需提供一个简单的dom元素即可，滑动对该dom元素下的直接子元素生效
 
+###Options
 
-##API
+* dom: 元素
+
+* time：动画时间长度
+
+* cps: 每次参与滚动的元素个数
+
+* maxIndex：最多滚动多少次
+
+* noGap：是否无缝
+
+* easing：jquery的运动动画
+
+* mode：指定滚动方式，horizontal表示水平 vertical表示垂直
+
+###Event
+
+* before：滚动前执行
+* after：滚动后执行
+
+###Api
 
 * to(index[, time])    滑动到第几个，该index非子元素index，子元素index = index * cps， time为滑动时长，可临时改变滑动时长。
 
@@ -28,23 +48,22 @@ slide插件提供最基础的滑动API，可自行继承并定制，也可不定
 
 * refresh	用于子元素数量改变后，位置出现错误的情况，可使用refresh来恢复
 
-##使用
+##Example
+
 ```js
-var slide = new Slide({
+var slider = new Slider({
     time: 1000, //滑动时长
 	dom: null,  //某一个元素滑动，滑动内的元素则为该元素的直接子元素
 	cps: 1, //每次滑动几个子元素
 	noGap: false,//是否无缝滑动
 	easing: null,   //提供jquery 的easing运动函数
 	mode: 'horizontal', //上下滑动还是水平滑动，默认为水平滑动
-	before: function(){},   //滑动前执行
-	after: function(){} //滑动后执行
 });
 ```
 
 ```js
 //一个定时滑动的例子
-var slide = new Slide({
+var slider = new Slider({
     dom: '#slide',
     noGap: true
 });
@@ -56,13 +75,10 @@ setInterval(function(){
 
 ```js
 //禁用按钮
-var slide = new Slide({
-	dom: '#slide',
-	before: function(){
-		//在执行before时，index已经为目标运行后的index，而非以前的index
-		if(this.isFirst()){
-			$('#prev_btn').attr('disabled', 'disabled');
-		}
+$('#slide').slider().on('before', function(){
+	//在执行before时，index已经为目标运行后的index，而非以前的index
+	if(this.isFirst()){
+		$('#prev_btn').attr('disabled', 'disabled');
 	}
 });
 ```

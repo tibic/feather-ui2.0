@@ -1,16 +1,3 @@
-/**
- # placeholder组件
- #
- # Options:
- 	dom: 元素
- 	text：placeholder的文字，可不设置，自动读取placeholder属性和data-placeholder属性
-
-
- # Api:
- 　 setPlaceHolder([text])：设置placeholder，如果为空，则自动读取placeholder和data-placeholder属性
- 
- */
-
 ;(function(window, factory){
 if(typeof define == 'function'){
 	//seajs or requirejs environment

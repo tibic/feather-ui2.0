@@ -1,30 +1,23 @@
-Mask
-===============
+Pager分页组件
+====================== 
+ 
+###Options
 
-##简介
-分页组件
+* dom: 生成页码的容器
+* pageTotal: 页总数
+* perPage：显示的页的个数，如果总数大雨此参数，则会出现。。。来表示中间省略的野马
+* url：跳转的地址，组件会自动在该url后面追加&page=页码，默认为空，则需要绑定switch事件
+* first：是否显示首页按钮
+* last：是否显示尾页按钮
+* currentPage：初始化时的页码
+* currentPageClassName: 当前页码的类名
+* className：组件对象的雷鸣
+* pageClassName：各个页码的样式
 
+###Events:
 
-##使用
-```js
-var page = new Page({
-    dom: '#dom',
-    pageTotal: 0, //整页数
-    perPage: 10,  //显示几页
-    url: '',    //url不为空，可直接跳转，而非调用callback
-    first: true,  //显示首页
-    last: true,   //显示最后一页
-    currentPage: 1, //当前页码
-    currentPageClassName: 'ui2-pager-current',  //当前页class
-    pageClassName: '',  //页码class
-    callback: function(page){}  //url不为空时 每次点击页码回调， 当前页不可重复点击，如需重新加载当前页，可直接调用pageto方法
-});
-```
+* switch(pageIndex)：切换页码时触发
 
+###Api:
 
-##API
-* PageTo(index)  index为需要跳转的页数，如果缺省，则执行当前页
-
-
-
-    
+* to(pageIndex)：跳转至第几页，该方法会触发switch事件

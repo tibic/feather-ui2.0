@@ -19,7 +19,7 @@ Uploader组件是基于uploadify插件2次开发的组件，提供用户更好�
 * queueID: 指定一个容器，在此容器里会显示上传进度和上传队列
 * queueSizeLimit：队列最大值，默认999
 * uploadLimit：最大上传个数
-* fileTypeExts: 允许的文件后缀，如：'*.jpg;*.jpeg;*.png;*.JPG;*.JPEG;*.PNG'
+* fileTypeExts: 允许的文件后缀，如：'*.jpg;*.jpeg;*.png'
 
 ###Event
 

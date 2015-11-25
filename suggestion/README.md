@@ -173,7 +173,7 @@ $('#suggestion').suggestion({
 	}
 }).on('select', function(value, obj){
 	console.log(value); //张三
-	console.log(item); //{uid: 1, name: "张三"}
+	console.log(obj); //{uid: 1, name: "张三"}
 });
 ```
 
