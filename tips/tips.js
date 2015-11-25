@@ -48,6 +48,7 @@ var Tips = Class.extend('Event', {
 
 	destroy: function(){
 		this.$.destroy();
+		this.$ = null;
 		clearTimeout(this.id);
 	}
 });

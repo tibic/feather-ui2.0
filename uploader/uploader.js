@@ -18,6 +18,37 @@ require.async('upload', function(Upload){
 </script>
 */
 
+//自动获取swf的地址
+(function(){
+var doc = document, currentScript;
+
+//获取upoader.js的url
+if(doc.currentScript){
+	currentScript = doc.currentScript.src;
+}else{
+	var scripts = doc.getElementsByTagName("script");
+
+	for(var i = scripts.length - 1; i >= 0; i--){
+		var script = scripts[i];
+
+		if(script.readyState === "interactive"){
+			currentScript = script.src;
+			break;
+		}
+	}
+}
+
+//如果未使用编译工具，则直接返回
+function __uri(url){
+	return url;
+}
+
+var prefix = currentScript.replace(/[^\/]+$/, '');
+var swfUrl = __uri("./uploader.swf", true, false).split('/').pop();
+
+window.__featherUiUploaderSwfUrl__ = prefix + swfUrl;
+})();
+
 ;(function(window, factory){
 if(typeof define == 'function'){
 	//seajs or requirejs environment
@@ -31,14 +62,14 @@ if(typeof define == 'function'){
 	});
 }else{
 	window.jQuery.featherUi = window.jQuery.featherUi || {};
-	window.jQuery.featherUi.Tooltip = factory(
+	window.jQuery.featherUi.Uploader = factory(
 		window.jQuery || window.$, 
 		window.jQuery.featherUi.Class,
 		window.jQuery.featherUi.Cookie
 	);
 }
 })(window, function($, Class, Cookie){
-var DATANAME = Class.NAMESPACE + '.upload';
+var DATANAME = Class.NAMESPACE + '.uploader';
 
 var prototype = {
 	initialize: function(opt){
@@ -46,6 +77,7 @@ var prototype = {
 
 		self.dom = $(opt.dom);
 		self.options = $.extend({
+			swf: window.__featherUiUploaderSwfUrl__,
 			debug: false,
 			width: self.dom.width(),
 			height: self.dom.height(),
@@ -80,7 +112,7 @@ var prototype = {
 		});
 
 		if(!self.dom.attr('id')){
-			self.dom.attr('id', 'ui2-upload-' + $.now);
+			self.dom.attr('id', 'ui2-uploader-' + $.now);
 		}
 
 		self.dom.uploadify(options);
@@ -98,11 +130,12 @@ $.each('cancel destroy disable settings stop upload'.split(' '), function(key, m
 
 		self.dom.uploadify.apply(self.dom, args);
 		self.dom.removeData(DATANAME);
+		/ui2-uploader-\d+/.test(self.dom.attr('id')) && self.dom.removeAttr('id');
 		self.uploader.removeData(DATANAME);
 		self.dom = null;
 		self.uploader = null;
 	};
 });
 
-return Class.$factory('upload', prototype);
+return Class.$factory('uploader', prototype);
 });

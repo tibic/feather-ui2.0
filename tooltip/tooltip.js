@@ -18,7 +18,7 @@ if(typeof define == 'function'){
 var proxy = $.proxy, doc = document;
 
 var Tooltip = Class.$factory('tooltip', {
-	intialize: function(opt){
+	initialize: function(opt){
 		this.options = $.extend({
 			dom : null,
 			content: null,

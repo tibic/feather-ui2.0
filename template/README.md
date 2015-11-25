@@ -3,7 +3,7 @@ Template
 
 超轻量级的前端模版引擎
 
-###使用
+###Example
 ```html
 <script>
 Template.parse("<%if(status){%>true<%}else{%>false<%}%>", {status: 1});
