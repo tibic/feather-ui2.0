@@ -1,33 +1,3 @@
-/**
- # slider组件
- #
- # Options:
- 	dom: 元素
- 	time：动画时间长度
- 	cps: 每次参与滚动的元素个数
- 	maxIndex：最多滚动多少次
- 	noGap：是否无缝
- 	easing：jquery的运动动画
- 	mode：指定滚动方式，horizontal表示水平 vertical表示垂直
-
- # Event：
- 	before：滚动前执行
- 	after：滚动后执行
-
- # Api:
- 　 refresh：刷新元素结构，如果有新元素增加时，可使用该方法，刷新结构
- 	to(index[, time])：滚动至某一元素
- 	stop：停止滚动
- 	pause：暂停滚动
- 	resume：暂停后恢复
- 	toNext：滚动下一个
- 	toPrev：滚动上一个
- 	toFirst：滚动至第一个
- 	toLast：滚动至最后一个
- 	isFirst：检查是否index是否为0
- 	isLast：检查是否滚动至最大的index
- */
-
 ;(function(window, factory){
 if(typeof define == 'function'){
 	//seajs or requirejs environment
